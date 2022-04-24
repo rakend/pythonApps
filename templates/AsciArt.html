@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Asci Art</title>
+<style>
+	span{
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<div>//ASCI//</div>
+	<br>
+	<form method="post">
+		<label>
+			<div>title : </div><br>
+			<input type="text" name="art_name" value="{{title}}">
+		</label>
+		<br><br>
+		<label>
+			<div>art : </div><br>
+			<textarea rows=15 cols=60 name="art">{{art}}</textarea>
+		</label>
+		<div><span>{{error}}</span></div>
+		<input type="submit" value="submit">
+	</form>
+	<br>
+	<hr>
+	<div>
+		{% for art in arts %}
+			<div><h2>{{art.title}}</h2></div>
+			<pre>{{art.art}}</pre>
+			<br>
+		{% endfor %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>my first blog</title>
+	<style>
+		span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div><h1><center>Rakend's Blog</center></h1></div><br>
+	<h3>new post</h3>
+	<form method="post">
+		<label>	
+			<div>subject</div>
+			<input type="text" name="subject" value="{{subject}}">
+		</label>
+		<br><br>
+		<label>
+			<div>content</div>
+			<textarea cols="50" rows="15" name="content">{{content}}</textarea>
+		</label>
+		<div><span>{{error}}</span></div>
+		<div><input type="submit" value="submit"></div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>all posts</title>
+	<style>
+		#fir{
+			display :inline-block;
+		}
+		#sec{
+			display:inline-block;
+			float:right;
+		}
+		a{
+			text-decoration: none;
+			color:black;
+		}
+		a:hover{
+			color:#ccc;
+		}
+	</style>
+</head>
+<body>
+	<div><h1><center>Rakend's Blog</center></h1></div><br><br>
+	<div><a href="/blog/newpost"><h3>add your post</h3></a></div>
+	</br>
+	{% for l in wrap %}
+		<div>
+			<div id="fir">{{l.subject}}</div>
+			<div id="sec">{{l.created.strftime("%d %b ,%y")}}</div>
+		</div>
+		<hr>
+		<div>{{l.content.replace('\n','<br>') | safe}}</div>
+		<br>
+		<br>
+	{% endfor %}
+</body>
+</html>
